@@ -1,0 +1,15 @@
+deployment:
+  name: user-deployment
+  label: nginx-user
+  container:
+    name: nginx-user
+    image: nginx
+    port: 80
+
+hpa:
+  name: user-hpa
+  ref: user-deployment
+
+service:
+  name: user-service
+  targetPort: 80

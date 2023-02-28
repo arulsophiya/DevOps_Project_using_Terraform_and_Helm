@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: {{ .Values.deployment.namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: {{ .Values.deployment.label }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        type: {{ .Values.deployment.label }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.container.name }}
+        image: {{ .Values.deployment.container.image }}
+        ports:
+        - containerPort: {{ .Values.deployment.container.port }}
+        resources:
+          limits:
+            cpu: 100m
+          requests:
+            cpu: 100m
