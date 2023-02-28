@@ -2,7 +2,7 @@
 
 This repo contains the code required to deploy two containers in the `user` and `shift` namespace via `Helm Chart` into an `EKS Cluster`.
 
-Within the `Kubernetes Project`, there are three separate folders
+Within the `DevOps_Project_using_Terraform_and_Helm`, there are three separate folders
 
 - [/terraform](https://github.com/arulsophiya/DevOps_Project_using_Terraform_and_Helm/tree/main/terraform/modules/myapp) contains the Terraform module that provisions the Helm Chart into an EKS Cluster.
 - [/helm](https://github.com/arulsophiya/DevOps_Project_using_Terraform_and_Helm/tree/main/helm/myapp) contains the Helm Chart with the Kubernetes manifest files
